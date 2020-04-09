@@ -1,28 +1,13 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro, { useState } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.less'
 
-export default class Index extends Component {
-
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  config = {
-    navigationBarTitleText: '首页'
-  }
-
-  render () {
-    return (
-      <View className='index'>
-        <Text>Hello world!</Text>
-      </View>
-    )
-  }
+function Index() {
+  const [userName, setuserName] = useState('哈哈哈哈')
+  return (
+    <View>
+      <Text>{userName}</Text>
+    </View>
+  )
 }
+export default Index
