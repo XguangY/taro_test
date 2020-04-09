@@ -21,11 +21,32 @@ function Index() {
       url: '/pages/blog/blog?blogTit=' + blogTit + '&intro=' + intro
     })
   }
+  // 列表数据
+  const data = [
+    { id: 1, name: '张三年' },
+    { id: 2, name: '张1年' },
+    { id: 3, name: '张2年' },
+    { id: 4, name: '张5年' }
+  ]
+  const zhujueNum = 1
   return (
     <View>
       <Text>{userName}</Text>
       <Child username={userName}></Child>
       <Button onClick={goBlog}>前往blog</Button>
+      {
+        data.map((item, index) => {
+          return (
+            <View key={index}>{'id:' + item.id + '---- name:' + item.name}</View>
+          )
+        })
+      }
+      <View>
+        男主角是：{zhujueNum == 1 ? '玉田' : '刘能'}
+      </View>
+      <View>
+        男主角是：{zhujueNum == 1 && '玉田' || '刘能'}
+      </View>
     </View>
   )
 }
