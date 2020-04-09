@@ -16,9 +16,11 @@ import './index.less';
 class Index extends Taro.Component {
   render() {
     const [userName, setUserName] = Taro.useState('哈哈哈哈');
+    const [blogTit, setBlogTit] = Taro.useState('博客标题');
+    const [intro, setIntro] = Taro.useState('111111');
     const goBlog = () => {
       Taro.navigateTo({
-        url: '/pages/blog/blog'
+        url: '/pages/blog/blog?blogTit=' + blogTit + '&intro=' + intro
       });
     };
     return <View>

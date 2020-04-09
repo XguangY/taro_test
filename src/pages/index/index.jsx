@@ -14,9 +14,11 @@ import './index.less'
 
 function Index() {
   const [userName, setUserName] = useState('哈哈哈哈')
+  const [blogTit, setBlogTit] = useState('博客标题')
+  const [intro, setIntro] = useState('111111')
   const goBlog = () => {
     Taro.navigateTo({
-      url: '/pages/blog/blog'
+      url: '/pages/blog/blog?blogTit=' + blogTit + '&intro=' + intro
     })
   }
   return (
